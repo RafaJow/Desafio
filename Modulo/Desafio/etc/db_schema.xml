@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="table_store_color" resource="default" engine="innodb">
+        <column xsi:type="int" name="store_id" unsigned="false" nullable="false" identity="true" comment="Store ID"/>
+        <column xsi:type="varchar" name="color" unsigned="true" nullable="false" identity="false" default="0" comment="Color hex"/>
+        
+        <constraint xsi:type="unique" referenceId="TABLE_STORE_COLOR_STORE_ID">
+            <column name="store_id"/>
+        </constraint>
+    </table>
+</schema>
